@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src ="bg.universe.mp4" type="video/mp4">
+        
+    </video>
+    <div class="content">
+        <header>
+            <div class="container">
+                <h1>Quiz Website</h1>
+                <div class="header-buttons">
+                    <button onclick="redirectTo('login.html')">Login</button>
+                    <button onclick="redirectTo('signup.html')">Sign Up</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="quiz-sections">
+                <div class="quiz-section" onclick="redirectTo('technology.html')">
+                    <div class="bg-image" style="background-image: url('technology.jpg');"></div>
+                    <div class="title">Technology Quiz</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz2.html')">
+                    <div class="bg-image" style="background-image: url('car.jpeg');"></div>
+                    <div class="title">Quiz 2</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz3.html')">
+                    <div class="bg-image" style="background-image: url('bike.jpg');"></div>
+                    <div class="title">Quiz 3</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz4.html')">
+                    <div class="bg-image" style="background-image: url('nature.jpg');"></div>
+                    <div class="title">Quiz 4</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz5.html')">
+                    <div class="bg-image" style="background-image: url('games.png');"></div>
+                    <div class="title">Quiz 5</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz6.html')">
+                    <div class="bg-image" style="background-image: url('animal.jpg');"></div>
+                    <div class="title">Quiz 6</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz7.html')">
+                    <div class="bg-image" style="background-image: url('bird.jpg');"></div>
+                    <div class="title">Quiz 7</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz8.html')">
+                    <div class="bg-image" style="background-image: url('general\ knowledge.jpg');"></div>
+                    <div class="title">Quiz 8</div>
+                </div>
+                <div class="quiz-section" onclick="redirectTo('quiz9.html')">
+                    <div class="bg-image" style="background-image: url('social\ media.jpg');"></div>
+                    <div class="title">Quiz 9</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

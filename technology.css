@@ -1,0 +1,68 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.quiz-background {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('technology-bg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-sections {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1200px; /* Max width for sections */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+    gap: 20px;
+}
+
+.quiz-section {
+    width: calc(50% - 40px); /* Adjust width as needed */
+    min-height: 200px; /* Fixed height for sections */
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-section:hover {
+    transform: scale(1.18); /* Scale up on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Adjusted shadow effect on hover */
+}
+
+.quiz-section h1 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.quiz-section p {
+    color: #333;
+    margin: 0;
+    font-size: larger;
+}
+
+@media (max-width: 768px) {
+    .quiz-section {
+        width: calc(100% - 40px); /* Full width on smaller screens */
+    }
+}

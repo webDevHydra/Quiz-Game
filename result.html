@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .b1 button{
+            color: white;
+            background-color: blue;
+            height: 50px;
+            width: 250px;
+            font-size: 20px;
+            border: 1px solid blue;
+            border-radius: 25px;
+        }
+        .b1 button:hover{
+            background-color: rgb(15, 0, 83);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <div class="container">
+                <h1>Quiz Result</h1>
+            </div>
+        </header>
+        <main>
+            <div class="result-container">
+                <h2 id="result"></h2>
+            </div>
+            <div class="b1">
+                <button id="techBack" onclick="redirectTo('technology.html')">Back to Tech Quiz</button>
+                
+                <button id="homeBack" onclick="redirectTo('index.html')">Back to Home Page</button>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const score = localStorage.getItem("quizScore");
+            const totalQuestions = localStorage.getItem("totalQuestions");
+            document.getElementById("result").textContent = `You scored ${score} out of 10`;
+        });
+/******************redirect*********************/
+        document.getElementById('techBack').addEventListener('click', function() {
+    window.location.href = 'technology.html'; // Replace 'secondPage.html' with the URL of your second page
+});
+document.getElementById('homeBack').addEventListener('click', function() {
+    window.location.href = 'index.html'; // Replace 'secondPage.html' with the URL of your second page
+});
+
+
+    </script>
+</body>
+</html>

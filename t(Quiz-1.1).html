@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.header-buttons {
+    margin-top: 10px;
+    animation: fadeIn 1s ease-in;
+}
+
+.header-buttons button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-buttons button:hover {
+    background-color: #777;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.quiz-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 600px; /* Maximum height for scrolling */
+    animation: fadeIn 1s ease-in;
+}
+
+.quiz-section {
+    margin-bottom: 20px;
+    width: 70%; /* Adjusted width for quiz sections */
+    padding: 15px; /* Increased padding */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-section:hover {
+    background-color: #f0f0f0; /* Grey background on hover */
+}
+
+.quiz-section p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quiz-section label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+    animation: fadeIn 1s ease-in;
+}
+
+.quiz-section input[type="radio"] {
+    margin-right: 5px;
+}
+
+.quiz-section input[type="radio"]:hover {
+    transform: scale(1.1);
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 1s ease-in;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in;
+}
+
+.result-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.result-container h2 {
+    margin-bottom: 10px;
+}
+
+.result-container p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        
+        <main>
+            <div class="quiz-container">
+                <div id="timer">10:00</div>
+                <form id="quizForm">
+                    <!-- Question 1 -->
+                    <div class="quiz-section">
+                        <p>1. What does AI stand for?</p>
+                        <label><input type="radio" name="question1" value="A"> A. Artificial Internet</label><br>
+                        <label><input type="radio" name="question1" value="B"> B. Artificial Invention</label><br>
+                        <label><input type="radio" name="question1" value="C"> C. Artificial Intelligence</label><br>
+                        <label><input type="radio" name="question1" value="D"> D. Automated Interface</label>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-section">
+                        <p>2. Which programming language is commonly used for AI?</p>
+                        <label><input type="radio" name="question2" value="A"> A. JavaScript</label><br>
+                        <label><input type="radio" name="question2" value="B"> B. Python</label><br>
+                        <label><input type="radio" name="question2" value="C"> C. C++</label><br>
+                        <label><input type="radio" name="question2" value="D"> D. Java</label>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-section">
+                        <p>3. What is the goal of machine learning?</p>
+                        <label><input type="radio" name="question3" value="A"> A. To make computers think like humans</label><br>
+                        <label><input type="radio" name="question3" value="B"> B. To optimize computer performance</label><br>
+                        <label><input type="radio" name="question3" value="C"> C. To enable computers to learn from data</label><br>
+                        <label><input type="radio" name="question3" value="D"> D. To automate computer processes</label>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-section">
+                        <p>4. Which of the following is an example of supervised learning?</p>
+                        <label><input type="radio" name="question4" value="A"> A. Image classification</label><br>
+                        <label><input type="radio" name="question4" value="B"> B. Clustering</label><br>
+                        <label><input type="radio" name="question4" value="C"> C. Reinforcement learning</label><br>
+                        <label><input type="radio" name="question4" value="D"> D. Neural networks</label>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="quiz-section">
+                        <p>5. What is the difference between AI and machine learning?</p>
+                        <label><input type="radio" name="question5" value="A"> A. AI is a subset of machine learning</label><br>
+                        <label><input type="radio" name="question5" value="B"> B. Machine learning is a subset of AI</label><br>
+                        <label><input type="radio" name="question5" value="C"> C. They are the same</label><br>
+                        <label><input type="radio" name="question5" value="D"> D. AI is more advanced than machine learning</label>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="quiz-section">
+                        <p>6. Which type of AI mimics human cognition?</p>
+                        <label><input type="radio" name="question6" value="A"> A. Narrow AI</label><br>
+                        <label><input type="radio" name="question6" value="B"> B. General AI</label><br>
+                        <label><input type="radio" name="question6" value="C"> C. Strong AI</label><br>
+                        <label><input type="radio" name="question6" value="D"> D. Weak AI</label>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="quiz-section">
+                        <p>7. What is a neural network?</p>
+                        <label><input type="radio" name="question7" value="A"> A. A type of computer network</label><br>
+                        <label><input type="radio" name="question7" value="B"> B. A model inspired by the human brain</label><br>
+                        <label><input type="radio" name="question7" value="C"> C. A form of natural language processing</label><br>
+                        <label><input type="radio" name="question7" value="D"> D. An AI-powered search engine</label>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="quiz-section">
+                        <p>8. Which company developed the AI-powered personal assistant Siri?</p>
+                        <label><input type="radio" name="question8" value="A"> A. Google</label><br>
+                        <label><input type="radio" name="question8" value="B"> B. Microsoft</label><br>
+                        <label><input type="radio" name="question8" value="C"> C. Apple</label><br>
+                        <label><input type="radio" name="question8" value="D"> D. Amazon</label>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="quiz-section">
+                        <p>9. What is natural language processing (NLP)?</p>
+                        <label><input type="radio" name="question9" value="A"> A. A type of machine learning algorithm</label><br>
+                        <label><input type="radio" name="question9" value="B"> B. The ability of computers to understand human language</label><br>
+                        <label><input type="radio" name="question9" value="C"> C. An advanced form of AI</label><br>
+                        <label><input type="radio" name="question9" value="D"> D. A type of neural network</label>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="quiz-section">
+                        <p>10. What is reinforcement learning?</p>
+                        <label><input type="radio" name="question10" value="A"> A. A type of unsupervised learning</label><br>
+                        <label><input type="radio" name="question10" value="B"> B. A type of supervised learning</label><br>
+                        <label><input type="radio" name="question10" value="C"> C. A type of machine learning based on rewards and punishment</label><br>
+                        <label><input type="radio" name="question10" value="D"> D. An advanced form of AI</label>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script>
+        function redirectTo(page) {
+    window.location.href = page;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    let timerElement = document.getElementById("timer");
+    let timeRemaining = 10 * 60; // 10 minutes in seconds
+
+    const correctAnswers = ['C', 'B', 'C', 'A', 'B', 'B', 'B', 'C', 'B', 'C']; // Answers for questions 1 to 10
+
+    const updateTimer = () => {
+        let minutes = Math.floor(timeRemaining / 60);
+        let seconds = timeRemaining % 60;
+        timerElement.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        if (timeRemaining > 0) {
+            timeRemaining--;
+        } else {
+            submitQuiz();
+        }
+    };
+
+    setInterval(updateTimer, 1000);
+
+    document.getElementById("quizForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitQuiz();
+    });
+
+    function submitQuiz() {
+        let score = 0;
+        const formData = new FormData(document.getElementById("quizForm"));
+        
+        correctAnswers.forEach((answer, index) => {
+            const userAnswer = formData.get(`question${index + 1}`);
+            if (userAnswer === answer) {
+                score++;
+            }
+        });
+
+        localStorage.setItem("quizScore", score);
+        window.location.href = "result.html";
+    }
+});
+    </script>
+</body>
+</html>
